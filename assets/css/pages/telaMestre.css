@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+body {
+    background-image: url('../../../assets/images/table.jpg');
+    background-size: cover;
+    font-family: 'MedievalSharp', cursive;
+    color: #f1e1a6;
+}
+
+.form-control {
+    background-color: #2e2b29;
+    color: greenyellow;
+    border: 1px solid green;
+    margin-bottom: 15px;
+}
+
+.form-control:focus {
+    border-color: greenyellow;
+    box-shadow: 0 0 10px greenyellow;
+}
+
+label {
+    color: greenyellow;
+}
+
+.btn-primary {
+    background-color: greenyellow;
+    border: none;
+    color: #2e2b29;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: greenyellow;
+}
+
+h2 {
+    color: greenyellow;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+
+/*Caixa de Atributos - Começo*/
+
+    /* Dropdown Button */
+    .dropbtn {
+        background-color: black;
+        color: greenyellow;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* Dropdown button on hover & focus */
+    .dropbtn:hover, .dropbtn:focus {
+        background-color: greenyellow;
+        color: black;
+    }
+
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: black;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+        color: greenyellow;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    /* Change color of dropdown links on hover */
+    .dropdown-content a:hover {background-color: greenyellow; color: black;}
+
+    /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+    .show {display:block;}
+
+/*Caixa de Atributos - Fim*/
+
+.dice {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 15px;
+    border: 3px solid #2e2b29;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin: 20px auto;
+}
+
+.dice.square {
+    border-radius: 15px;
+}
+
+.dice.hexagon {
+    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+}
+
+.dice:hover {
+    background-color: greenyellow;
+    box-shadow: 0 0 10px greenyellow;
+}
+
+.dice-result {
+    color: #2e2b29;
+}

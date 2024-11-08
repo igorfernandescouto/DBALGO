@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criação de Personagem - RPG</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link href="assets/css/common.css" rel="stylesheet">
+  <link href="assets/css/pages/criarPersonagem.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="card">
+      <h2>Criação de Personagem</h2>
+      <form>
+        <!-- Nome do jogador -->
+        <div class="form-group">
+          <label for="playerName">Nome do Jogador</label>
+          <input type="text" class="form-control" id="playerName" placeholder="Nome do Jogador" required>
+        </div>
+
+        <!-- Descrição do jogador -->
+        <div class="form-group">
+          <label for="playerDescription">Descrição do Jogador</label>
+          <textarea class="form-control" id="playerDescription" placeholder="Breve descrição do jogador" rows="3" required></textarea>
+        </div>
+
+        <div class="row">
+          <div class="col-md-8">
+            <!-- Classe do jogador -->
+            <div class="form-group">
+              <label for="playerClass">Classe</label>
+              <select class="form-control" id="playerClass" required>
+                <option value="">Selecione uma classe</option>
+                <option value="guerreiro">Guerreiro</option>
+                <option value="mago">Mago</option>
+                <option value="arqueiro">Arqueiro</option>
+                <option value="paladino">Paladino</option>
+                <option value="ladino">Ladino</option>
+                <option value="clerigo">Clérigo</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Preview da classe -->
+          <div class="col-md-4">
+            <div class="class-preview">
+              <div id="shapeContainer" class="shape square"></div>
+              <div class="class-name">Classe: <span id="selectedClass">Nenhuma</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botão -->
+        <button type="submit" class="btn btn-primary w-100">Criar Personagem</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/pages/criarPersonagem.js"></script>
+</body>
+
+</html>

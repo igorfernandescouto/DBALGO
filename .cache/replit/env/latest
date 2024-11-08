@@ -1,0 +1,55 @@
+declare -gx REPLIT_NIX_CHANNEL=stable-23_11
+declare -gx REPLIT_PID1_VERSION=0.0.0-c3ce74f
+declare -gx SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
+declare -gx REPL_PUBKEYS='{"crosis-ci":"7YlpcYh82oR9NSTtSYtR5jDL4onNzCGJGq6b+9CuZII=","crosis-ci:1":"7YlpcYh82oR9NSTtSYtR5jDL4onNzCGJGq6b+9CuZII=","crosis-ci:latest":"7YlpcYh82oR9NSTtSYtR5jDL4onNzCGJGq6b+9CuZII=","prod":"tGsjlu/BJvWTgvMaX7acuUb7AO1dXOrRiuk7y083RFE=","prod:1":"tGsjlu/BJvWTgvMaX7acuUb7AO1dXOrRiuk7y083RFE=","prod:2":"8uGN+vfszlnV93/HCSHlVLG0xddMlPkir1Ni4JKT4+w=","prod:3":"9+MCOSHQSQlcodXoot8dC8NLhc862nLkx1/VMsbY2h8=","prod:4":"8uGN+vfszlnV93/HCSHlVLG0xddMlPkir1Ni4JKT4+w=","prod:5":"9+MCOSHQSQlcodXoot8dC8NLhc862nLkx1/VMsbY2h8=","prod:latest":"tGsjlu/BJvWTgvMaX7acuUb7AO1dXOrRiuk7y083RFE=","vault-goval-token":"D5jJoMx1Ml54HM92NLgXl+MzptwDqbSsfyFG6f52g9E=","vault-goval-token:1":"D5jJoMx1Ml54HM92NLgXl+MzptwDqbSsfyFG6f52g9E=","vault-goval-token:latest":"D5jJoMx1Ml54HM92NLgXl+MzptwDqbSsfyFG6f52g9E="}'
+declare -gx DOCKER_CONFIG=/home/runner/DBALGO/.config/docker
+declare -gx COLORTERM=truecolor
+declare -gx LANG=en_US.UTF-8
+declare -gx REPLIT_PID1_FLAG_NIXMODULES_BEFORE_REPLIT_NIX=1
+declare -gx REPLIT_RIPPKGS_INDICES=/nix/store/73awzgwmrga8y0dl84cp30h40965wyk5-rippkgs-indices
+declare -gx XDG_DATA_HOME=/home/runner/DBALGO/.local/share
+declare -gx HOSTNAME=6e7cc217dfee
+declare -gx REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+declare -gx REPL_OWNER_ID=27860358
+declare -gx NODE_EXTRA_CA_CERTS=/etc/ssl/certs/ca-certificates.crt
+declare -gx REPLIT_DEV_DOMAIN=3ba6032f-8b74-40f0-8553-3928bf30ba37-00-2g3l850ur83rf.riker.replit.dev
+declare -gx REPL_IDENTITY_KEY=k2.secret.xqgkKxVtuyj-gSccxnTkMwAdyE9fXJTh2CKjXOB7USmS5kN0nvlpaL7onhLcPDsrKeMBMGmsmr_Y-bp2XY6xPg
+declare -gx REPLIT_RTLD_LOADER=1
+declare -gx REPLIT_ENVIRONMENT=production
+declare -gx GIT_EDITOR=replit-git-editor
+declare -gx NIXPKGS_ALLOW_UNFREE=1
+declare -gx REPLIT_SUBCLUSTER=interactive
+declare -gx REPLIT_CLUSTER=riker
+declare -gx REPLIT_DOMAINS=3ba6032f-8b74-40f0-8553-3928bf30ba37-00-2g3l850ur83rf.riker.replit.dev
+declare -gx GIT_ASKPASS=replit-git-askpass
+declare -gx REPLIT_BASHRC=/nix/store/vxzp0jk1x0l6w6v1xhq7fi9rrw2jf2zj-replit-bashrc/bashrc
+declare -gx LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
+declare -gx LIBGL_DRIVERS_PATH=/nix/store/zxhjnh2d440bhli0zck18s10hcq07qpp-mesa-24.2.2-drivers/lib/dri
+declare -gx REPL_LANGUAGE=html
+declare -gx REPL_SLUG=DBALGO
+declare -gx NIX_PS1='\[\033[01;34m\]\w\[\033[00m\]\$ '
+declare -gx USER=runner
+declare -gx REPL_OWNER=igorfernandes82
+read -r _new_path <<< "/nix/store/7l5h4c4dyc6y81gfffxzphail200qvih-pid1/bin:/nix/store/n1k7pwm9qm4s7l9f5p2kli82z0ckj6c9-replit-runtime-path/bin:/home/runner/.nix-profile/bin:/home/runner/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+#PATH=/nix/store/7l5h4c4dyc6y81gfffxzphail200qvih-pid1/bin:/nix/store/n1k7pwm9qm4s7l9f5p2kli82z0ckj6c9-replit-runtime-path/bin:/home/runner/.nix-profile/bin:/home/runner/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+if [ -e "/run/replit/env/last" ]; then read -r _last_path < <(\grep '^#PATH=' /run/replit/env/last | cut -f 2 -d =); fi
+_user_components="$(\tr : $'\n' <<< "${PATH:-}" |\grep -xv -f <(\tr : $'\n' <<< "${_last_path}") |\tr $'\n' :)"
+declare -gx PATH="${_user_components}${_new_path}"
+declare -gx DENO_TLS_CA_STORE=system
+declare -gx NIX_PATH=nixpkgs=/home/runner/.nix-defexpr/channels/nixpkgs-stable-23_11:/home/runner/.nix-defexpr/channels
+declare -gx __EGL_VENDOR_LIBRARY_FILENAMES=/nix/store/zxhjnh2d440bhli0zck18s10hcq07qpp-mesa-24.2.2-drivers/share/glvnd/egl_vendor.d/50_mesa.json
+declare -gx REPLIT_DB_URL=https://kv.replit.com/v0/eyJhbGciOiJIUzUxMiIsImlzcyI6ImNvbm1hbiIsImtpZCI6InByb2Q6MSIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjb25tYW4iLCJleHAiOjE3MzExODY2ODcsImlhdCI6MTczMTA3NTA4NywiZGF0YWJhc2VfaWQiOiIzYmE2MDMyZi04Yjc0LTQwZjAtODU1My0zOTI4YmYzMGJhMzcifQ.Dkeu7ICKa0cFDzBjdFDng1yenfLLjSUEuyDNqmKmvciCVdy5ZdyxzYttWMH3oO9m3mzAj0_JTuIhDO05d1od1A
+declare -gx REPL_HOME=/home/runner/DBALGO
+declare -gx REPL_IMAGE=gcr.io/marine-cycle-160323/nix:bf8590a3e2f0a8b70b7ca175eeed9074dffbfca9
+declare -gx HOME=/home/runner
+declare -gx REPL_IDENTITY=v2.public.Q2lRelltRTJNRE15WmkwNFlqYzBMVFF3WmpBdE9EVTFNeTB6T1RJNFltWXpNR0poTXpjU0QybG5iM0ptWlhKdVlXNWtaWE00TWhvR1JFSkJURWRQSWlRelltRTJNRE15WmkwNFlqYzBMVFF3WmpBdE9EVTFNeTB6T1RJNFltWXpNR0poTXpjNGhydWtEVm9VQ2dWeWFXdGxjaElMYVc1MFpYSmhZM1JwZG1VPUILUDGtp_vSee47LYqwIGDiczFgsIRCQ0w9tQefTap3RUy5nCmEIwpxk8IyN0mqGZFRzYyh1go6WeMm8U2C4w4.R0FFaUJtTnZibTFoYmhLYkNIWXlMbkIxWW14cFl5NVJNbVF6VTFka1RXRlVVakZWVm14U1lWaFdTV0pYT1ZKVVZrNUZVVmR3VVdOck1VUk9WVXB2VVRBd01Vc3lSbTlSV0doMlVUQmtRbFpYUmt0YU1qbHlWRlJLUzJGRk5YRlJXSEJPWWxac01GUXdaRXBOTURWRVRVUkNUbEl4YkROVVJsSnVUVlUxVlZSWVVrNWxiWFExVkRCa1MySlZNVFpSYld4YVZrVXdlbEl5YUVaVk1GRjVZa2MxYVUwd2NIUlhiR2hMWkZac1dFNVhkR0ZYUlRBd1ZGZG9kbEpyT1VwWlZHUjNVVlJDYUZGdWJFcFNiVTUwWWtoS1lWZEZiR2hTUms1MlZFZEdXRTVVUW1GWFJYQnZWMVJPVTJOSFVuUldWMnhQVmpOT05WUkhOVU5OVm14MFpVaENXbVZVVm5sYVJscDNVbFp3Um1KNlRrOVdNRnBaV1ZaTmQwMXNUbkZWYkZKT1RVWkplbFJxUWpCT1YwcDBZMFZLVjFKVmNETlpNblIzWlVab05sTnNSbWxXUm5CeVdXdFNTMVZIVFhoVlZFRTFVbE0zTkVoVk1sbHNUVGh5VEc1SVpGTllRVEZVVFVsT1p5MHphbGRuWm1KRE0yNUNTV05tY1hGQlRtTTVXVE51VDB0aVgyTmlORFpOYzJoWE5WOTNSMDFmT1U1NVVVOURVa1ZLTVY5U05XVkNXWE5OTGxJd1JrWmhWVXAwVkc1YWFXSlVSbTlaYldoTldXdEdkVmRZYkUxaWEwbDRWMWN4TkdOR2JEVk9Wa3BPWWxaSk1sWlVSbXROUjFaMFUyeGFWR0p1UWxkV2JURTBWVEZTY2xWdFJrNVdia0pYVlRKMFQxWkdXbGxoUlZaV1pXdEtjbFZxUVRGVFZrWnlVMnhhVGxKc2NGTldiWEJQV1ZkU1YySXphRk5pVjJoVFZtcEtiMlJXVmxoa1IzUnBZa1UxV0ZsclZrOVdiVXBWWWtWV1ZtRnJTa2hhUjNoelZteEtkVkpzU2xkV1dFSktWakp3UTJNeFpITlNiR2hvVTBad1UxUlZaRk5STVZwSFdrVmtVbUpWV2tsWGExVjRWVEF4ZEZWcmRGZE5WbHBVVlZSS1NtUXhVbkpoUmtwWFlURndkbFpXV210aU1rcHpWRzVLYVZORldsaFpiWFIzVkRGc1YxVnNaRTVOV0VKSVYydFdNR0ZyTVhKWGJHeFhVbTFvV0ZaRVJtRmtSMVpKWTBaa1YySldTa2xXUmxKTFZESk5lVk5xV2xaaGVteFlWRmQ0UzJJeFdYbE5WRkpVVFd0YVIxUldWbXRXUjBwR1YyeGFXbFo2UlRCWFZscHpUbXhHVlZKdGNHbFNXRUkyVmtSR1YxbFhSWGxUYkd4V1ZrVmFWMWxyV21GamJIQklaVVZhYkZKdVFrWldNakYzWVVkRmVHTkhPVmRoYTFwVVZYcEdUbVZHV25OVGJFWlhVa1ZLTTFZeWRHRlhiVTUwWTBVeFVGZEZOSHBhUlZaYVRsWndSVkpZVW1saVZGWlJWREJrWVZWdFNsaGhSRXBVVWxad2VGWnJWbkprUjFKRllVVndhV0pXY0ZGWFJFbDRWbFV4ZEZsNlVtcFhTRUpHVld0a1ZrNUdXa1ZpUmxKb1RWWktObGR0ZUc5aVYxWnlZbnBDV0ZaVk1UWlhiWE4zWld4a1ZrNVlTbFJXUjFKWlYxZHJkMDVXU25KVmJUbFBZVlJHVEZScVNUVlNSWGh6VTFoa1UyRXhjRzlXYkZaM1RVWmFTRTVYUm1oV01IQldWVzB3TlZkdFNsaFZha3BXWVd0d1VGVXhXazlrVm1SMFVteE9VMlZ0WnpBPQ
+declare -gx DIRENV_CONFIG=/etc/direnv
+declare -gx DISPLAY=:0
+declare -gx XDG_CACHE_HOME=/home/runner/DBALGO/.cache
+declare -gx REPL_ID=3ba6032f-8b74-40f0-8553-3928bf30ba37
+declare -gx XDG_CONFIG_HOME=/home/runner/DBALGO/.config
+declare -gx REPLIT_CLI=/nix/store/hwdffd9whh9pp510v97hp15vf52b1ks8-pid1-0.0.1/bin/replit
+declare -gx REPLIT_PID1_FLAG_REPLIT_RTLD_LOADER=1
+declare -gx REPLIT_LD_AUDIT=/nix/store/n5x1kgbz8zjh63ymsijbislyi1n1hir6-replit_rtld_loader-1/rtld_loader.so
+declare -gx NIX_PROFILES='/nix/var/nix/profiles/default /home/runner/.nix-profile'
+declare -gx PROMPT_DIRTRIM=2
