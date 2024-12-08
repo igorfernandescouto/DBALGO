@@ -29,24 +29,18 @@
         <div class="row align-items-start">
             <h2>Master Domain</h2>
             <div class="col">
-                <form action="#" method="post">
+                <form action="updateCenario.php" method="post">
+                    <input type="hidden" name="codJogo" value="<?php echo $codJogo; ?>">
                     <div class="form-group">
-                        <label for="scene">Cênário</label>
-                        <select class="form-control" id="scene" required>
+                        <label for="scene">Cenário</label>
+                        <select class="form-control" id="scene" name="scene" required>
                             <option value="">Selecione</option>
-                            <option value="forest">Floresta</option>
-                            <option value="mountain">Montanha</option>
-                            <option value="cave">Caverna</option>
+                            <option value="dayForest">Floresta</option>
+                            <option value="dayMountain">Montanha</option>
+                            <option value="nightCave">Caverna</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="time">Tempo</label>
-                        <select class="form-control" id="time" required>
-                            <option value="">Selecione</option>
-                            <option value="day">Dia</option>
-                            <option value="night">Noite</option>
-                        </select>
-                    </div>
+                    <input type="submit" value="Enviar">
                 </form>
                 
                 <!-- <img src="assets/images/dice2.png" alt="dado"> -->
