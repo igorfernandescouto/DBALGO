@@ -45,7 +45,7 @@
     $select->execute();
 
     while ($result = $select->fetch()) {
-        $teste2=$result['cenario'];
+        $cenario=$result['cenario'];
     }
 
     $select = $con->prepare("SELECT numDado FROM jogo j WHERE $codJogo = j.codJogo");
@@ -69,7 +69,7 @@
     <?php
     echo '<style>';
         echo 'body{';
-            echo "background-image: url('assets/images/".$teste2.".jpg');";
+            echo "background-image: url('assets/images/".$cenario.".jpg');";
         echo '}';
     echo '</style>';
     ?>
@@ -132,7 +132,7 @@
                 while ($result = $select->fetch()) {
                     $nomeItem=$result['nomeItem'];
 
-                    if (empty($nomeHab)) {
+                    if (empty($nomeItem)) {
                         $nomeItem = "Sem habilidade";
                     }
                     
