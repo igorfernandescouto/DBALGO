@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
 
 body {
-  background-image: url('../../../assets/images/medieval_inn_room_by_amateurfantasyedits_dhgjirv-fullview.jpg');
+  background-image: url('/assets/images/medievalroom.jpg');
   background-size: cover;
   font-family: 'MedievalSharp', cursive;
   color: #f1e1a6;

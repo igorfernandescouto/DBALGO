@@ -1,110 +1,68 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Inicial - Reino RPG</title>
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    <title>Login</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
     <style>
         body {
-            background-image: url('assets/images/1344519.png');
+            background-image: url('https://images6.alphacoders.com/136/1365699.jpeg');
             background-size: cover;
-            background-position: center;
-            height: 100vh;
-            color: white;
-            font-family: 'Arial', sans-serif;
-            overflow: hidden;
+            font-family: 'MedievalSharp', cursive;
+            color: #f1e1a6;
         }
-
-        .overlay {
+        .card {
             background-color: rgba(0, 0, 0, 0.7);
-            height: 100vh;
-            width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1;
+            border: 1px solid #f1e1a6;
         }
-
-        .container {
-            z-index: 2;
-            position: relative;
-            top: 50%;
-            transform: translateY(-50%);
+        .card-header {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-bottom: 1px solid #f1e1a6;
         }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 30px;
-            text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+        .form-control {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid #f1e1a6;
         }
-
-        .btn {
-            margin: 10px 0;
-            width: 100%;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
+        .btn-primary {
+            background-color: #6b4226;
+            border-color: #6b4226;
         }
-
-        .btn-primary:hover {
-            background-color: #3498db;
-            box-shadow: 0 0 10px #3498db;
-        }
-
-        .btn-secondary:hover {
-            background-color: #9b59b6;
-            box-shadow: 0 0 10px #9b59b6;
-        }
-
-        .btn-success:hover {
-            background-color: #2ecc71;
-            box-shadow: 0 0 10px #2ecc71;
-        }
-
-        footer {
-            position: absolute;
-            bottom: 10px;
-            width: 100%;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        footer a {
-            color: #f39c12;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
+        .btn-secondary {
+            background-color: #8b5e3c;
+            border-color: #8b5e3c;
         }
     </style>
 </head>
-
 <body>
-    <div class="overlay"></div>
-
-    <div class="container text-center">
-        <h1>Bem-vindo ao Reino RPG</h1>
-        <p class="mb-4">Escolha uma opção abaixo para começar sua aventura.</p>
-
-        <a href="telaJogadores.html" class="btn btn-primary"><i class="fas fa-users"></i> Tela dos Jogadores</a>
-        <a href="telaMestre.html" class="btn btn-secondary"><i class="fas fa-chess-king"></i> Tela do Mestre</a>
-        <a href="criarPersonagem.html" class="btn btn-success"><i class="fas fa-user-plus"></i> Criação de Personagem</a>
-        <a href="registrarJogador.html" class="btn btn-info"><i class="fas fa-sign-in-alt"></i> Sair</a>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card mt-5">
+                    <div class="card-header text-center">
+                        <h3>Bem-Vindo!</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="login.php" method="post">
+                            <div class="form-group">
+                                <label for="username">E-mail</label>
+                                <input type="text" class="form-control" id="email" name="email" placeholder="Digite seu e-mail">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Senha</label>
+                                <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Logar</button>
+                            <a href="registrarJogador.html" class="btn btn-secondary btn-block">Cadastre-se</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <footer>
-        <p>Desenvolvido com ❤️ por <a href="#">Dennys, Robertinho, e Igor</a></p>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
 </html>

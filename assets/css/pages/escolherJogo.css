@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+body {
+    background-image: url('/assets/images/nightForest.jpg');
+    background-size: cover;
+    font-family: 'MedievalSharp', cursive;
+    color: #f1e1a6;
+    text-align: center;
+}
+
+th {
+    background-color: #2e2b29;
+    color: #f1e1a6;
+    border: 1px solid #c69d66;
+    margin-bottom: 15px;
+}

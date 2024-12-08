@@ -15,31 +15,27 @@
     <div class="container">
         <div class="card">
             <h2>Cadastro no Reino RPG</h2>
-            <form>
+            <form id="myForm" action="gravaUsuario.php" method="post">
                 <!-- Apelido -->
                 <div class="form-group">
-                    <label for="nickname">Apelido</label>
-                    <input type="text" class="form-control" id="nickname" placeholder="Seu apelido" required>
+                    <label for="nome">Nome</label>
+                    <input type="text" class="form-control" maxlength="100" name="nome" id="nome" placeholder="Seu apelido" required>
                 </div>
                 <!-- E-mail -->
                 <div class="form-group">
                     <label for="email">E-mail</label>
-                    <input type="email" class="form-control" id="email" placeholder="Seu e-mail" required>
+                    <input type="email" class="form-control" maxlength="100" name="email" id="email" placeholder="Seu e-mail" required>
                 </div>
                 <!-- Senha -->
                 <div class="form-group">
-                    <label for="password">Senha</label>
-                    <input type="password" class="form-control" id="password" placeholder="Sua senha" required>
+                    <label for="senha">Senha</label>
+                    <input type="password" class="form-control" maxlength="8" name="senha" id="senha" placeholder="Sua senha" required>
                 </div>
                 <!-- Gênero -->
-                <div class="form-group">
-                    <label for="gender">Gênero</label>
-                    <select class="form-control" id="gender" required>
-                        <option value="">Selecione</option>
-                        <option value="Masculino">Masculino</option>
-                        <option value="Feminino">Feminino</option>
-                        <option value="Outro">Outro</option>
-                    </select>
+                <!-- Mestre -->
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="mestre" name="mestre" value="0">
+                    <label class="form-check-label" for="mestre">Mestre</label>
                 </div>
                 <!-- Botão -->
                 <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
@@ -47,14 +43,14 @@
             </form>
         </div>
     </div>
-    <script>
-        document.querySelector('form').addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevenir o comportamento padrão do formulário
 
-            // Aqui você pode adicionar a lógica para validação ou envio de dados via AJAX, se necessário
-
-            // Redirecionar para a página index.html
-            window.location.href = 'index.html';
+    <script> 
+        document.getElementById('mestre').addEventListener('change', function() { 
+            if (this.checked) { 
+                mestre.value = 1; 
+            } else { 
+                mestre.value = 0; 
+            } 
         });
     </script>
 

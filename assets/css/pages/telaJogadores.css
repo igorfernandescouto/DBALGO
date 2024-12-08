@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+body{
+    background-image: url('assets/images/dayForest.jpg');
+    font-family: 'MedievalSharp', cursive;
+        }
+
+.dice {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 15px;
+    border: 3px solid #2e2b29;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin: 20px auto;
+}
+
+.dice.square {
+    border-radius: 15px;
+}
+
+.dice.hexagon {
+    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+}
+
+.dice:hover {
+    background-color: greenyellow;
+    box-shadow: 0 0 10px greenyellow;
+}
+
+.dice-result {
+    color: #2e2b29;
+}
+
+h2{
+    color: orangered;
+}
+
+#borda {
+    border: red dashed;
+    background-color:rgba(0, 0, 0, 0.8);
+}
+
+ul > li {
+    color: white;
+    text-align: left;
+}
