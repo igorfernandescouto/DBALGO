@@ -101,6 +101,19 @@
         function rollDice() {
             const dice   = document.querySelector('.dice-result');
             const result = Math.floor(Math.random() * diceSidesArray[diceArrayIndex]) + 1;
+            fetch('updateDado.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ladosDado: diceSidesArray[diceArrayIndex], numDado: result })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            document.querySelector('.dice-result').textContent = data.numDado;
+        } else {
+            alert(data.error || 'Dado quebrou!');
+        }
+    });
 
             dice.textContent = result; // O Número result aparece no centro do dado
             localStorage.setItem('diceResult', result); // Salva o result para ser usado em outras páginas
