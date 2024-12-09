@@ -7,7 +7,7 @@ CREATE TABLE usuario (
 	nomeUsuario VARCHAR (100) NOT NULL,
 	email VARCHAR (100) NOT NULL,
 	senha VARCHAR (100) NOT NULL,
-	personagem SMALLINT;
+	personagem SMALLINT,
 	mestre BOOLEAN,
 	PRIMARY KEY (codUsuario)
 );
