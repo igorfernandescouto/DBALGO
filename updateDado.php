@@ -1,6 +1,7 @@
 <?php
+include 'conexao.php';
 session_start();
-include 'conexao.php'
+
 
 if (!isset($_SESSION['codUsuario']) || !isset($_SESSION['codJogo'])) {
     http_response_code(403);
