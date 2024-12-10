@@ -8,6 +8,8 @@
     $codJogo = $_GET['codJogo'];
     $codPersona = $_GET['codPersona'];
 
+    
+
     try {
         $update=$con->prepare('UPDATE usuario SET personagem=:personagem WHERE codUsuario=:codigo');
         $update->bindParam(':personagem',$codPersona);
@@ -28,28 +30,48 @@
             } 
         } 
 
-        
-        
-        if ($nume !== null) {
-
-            if ($nume == 1) {  
-                $update=$con->prepare('UPDATE jogo SET player1=:jogador WHERE codJogo=:jogo');
-            } elseif ($nume == 2) {  
-                $update=$con->prepare('UPDATE jogo SET player2=:jogador WHERE codJogo=:jogo');
-            } else {  
-                $update=$con->prepare('UPDATE jogo SET player3=:jogador WHERE codJogo=:jogo');
-            }
-             
-            $update->bindParam(':jogador',$codigo);
-            $update->bindParam(':jogo',$codJogo);
-            $update->execute();
-
-            header("location:telaJogadores.php?codJogo=$codJogo");
-        } else { 
-            header("location:join.php?codJogo=$codJogo");
-            echo '<script type="text/javascript">', 'alert("Sala cheia!");', '</script>';
+        $select = $con->prepare("SELECT player1, player2, mestre FROM jogo WHERE codJogo = $codJogo");
+        $select->execute();
+        while ($result = $select->fetch()) {
+            $player1=$result['player1'];
+            $player2=$result['player2']; 
+            $mestre=$result['mestre']; 
         }
 
+        if ($codigo != $mestre){
+            if ($nume !== null) {
+
+                if ($nume == 1) {  
+                    $update=$con->prepare('UPDATE jogo SET player1=:jogador WHERE codJogo=:jogo');
+                } elseif ($nume == 2) {  
+                    if($codigo != $player1){
+                        $update=$con->prepare('UPDATE jogo SET player2=:jogador WHERE codJogo=:jogo');
+                    } else {
+                        header("location:join.php?codJogo=$codJogo");
+                        echo '<script type="text/javascript">', 'alert("Usuário repetido!");', '</script>';
+                    }
+                } else {  
+                    if($codigo != $player1 AND $codigo != $player2){
+                        $update=$con->prepare('UPDATE jogo SET player3=:jogador WHERE codJogo=:jogo');
+                    } else {
+                        header("location:join.php?codJogo=$codJogo");
+                        echo '<script type="text/javascript">', 'alert("Usuário repetido!");', '</script>';
+                    }
+                }
+                
+                $update->bindParam(':jogador',$codigo);
+                $update->bindParam(':jogo',$codJogo);
+                $update->execute();
+
+                header("location:telaJogadores.php?codJogo=$codJogo");
+            } else { 
+                header("location:join.php?codJogo=$codJogo");
+                echo '<script type="text/javascript">', 'alert("Sala cheia!");', '</script>';
+            }
+        } else{
+            header("location:join.php?codJogo=$codJogo");
+            echo '<script type="text/javascript">', 'alert("Usuário repetido!");', '</script>';
+        }
         
     } catch (PDOException $e) {
         echo "Erro: " . $e->getMessage();
