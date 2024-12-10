@@ -61,12 +61,85 @@
                         </select>
                         <input type="submit" value="Enviar">
                 </form>
+                <br>
                 <div class="dropdown">
                     <button onclick="myFunction()" class="dropbtn">Atributos</button>
                     <div id="myDropdown" class="dropdown-content">
-                      <a href="#">Habilidades</a>
-                      <a href="#">Itens</a>
-                      <a href="#">Status</a>
+                        <h1 style="text-align: center;">Personagens</h1>
+                        <table border="1" style="border-collapse: collapse; margin: auto">
+                            <tr>
+                                <th>Código</th>
+                                <th>Nome</th>
+                                <th>Classe</th>
+                                <th>Editar</th>
+                            </tr>
+                        <?php
+                        $select = $con->prepare("SELECT * FROM persona p INNER JOIN jogo j, usuario u WHERE j.codJogo = $codJogo AND  j.player1 = u.codUsuario AND p.codPersona = u.personagem");
+                        $select->execute();
+
+                        while ($result = $select->fetch()) {
+                            $codPersona=$result['codPersona'];
+                            $nome=$result['nomePersona'];
+                            $classe=$result['classe'];
+
+                            echo "<tr>";
+                                echo "<td>".$codPersona."</td>";
+                                echo "<td>".$nome."</td>";
+                                echo "<td>".$classe."</td>";
+                                echo "<td style='text-align:center;'><a href='entrar.php?codPersona=$codPersona&codJogo=$codJogo'><img src='assets/images/lapis.png' title='Entrar na mesa'></a></td>";
+                            echo "</tr>";
+                        }
+
+                        $select = $con->prepare("SELECT * FROM persona p INNER JOIN jogo j, usuario u WHERE j.codJogo = $codJogo AND  j.player2 = u.codUsuario AND p.codPersona = u.personagem");
+                        $select->execute();
+
+                        while ($result = $select->fetch()) {
+                            $codPersona=$result['codPersona'];
+                            $nome=$result['nomePersona'];
+                            $classe=$result['classe'];
+
+                            echo "<tr>";
+                                echo "<td>".$codPersona."</td>";
+                                echo "<td>".$nome."</td>";
+                                echo "<td>".$classe."</td>";
+                                echo "<td style='text-align:center;'><a href='entrar.php?codPersona=$codPersona&codJogo=$codJogo'><img src='assets/images/lapis.png' title='Entrar na mesa'></a></td>";
+                            echo "</tr>";
+                        }
+
+                        $select = $con->prepare("SELECT * FROM persona p INNER JOIN jogo j, usuario u WHERE j.codJogo = $codJogo AND  j.player3 = u.codUsuario AND p.codPersona = u.personagem");
+                        $select->execute();
+
+                        while ($result = $select->fetch()) {
+                            $codPersona=$result['codPersona'];
+                            $nome=$result['nomePersona'];
+                            $classe=$result['classe'];
+
+                            echo "<tr>";
+                                echo "<td>".$codPersona."</td>";
+                                echo "<td>".$nome."</td>";
+                                echo "<td>".$classe."</td>";
+                                echo "<td style='text-align:center;'><a href='entrar.php?codPersona=$codPersona&codJogo=$codJogo'><img src='assets/images/lapis.png' title='Entrar na mesa'></a></td>";
+                            echo "</tr>";
+                        }
+
+                        $select = $con->prepare("SELECT * FROM persona p INNER JOIN jogo j WHERE j.codJogo = $codJogo AND j.oponente = p.codPersona");
+                        $select->execute();
+
+                        while ($result = $select->fetch()) {
+                            $codPersona=$result['codPersona'];
+                            $nome=$result['nomePersona'];
+                            $classe=$result['classe'];
+
+                            echo "<tr>";
+                                echo "<td>".$codPersona."</td>";
+                                echo "<td>".$nome."</td>";
+                                echo "<td>".$classe."</td>";
+                                echo "<td style='text-align:center;'><a href='editar.php?codPersona=$codPersona&codJogo=$codJogo'><img src='assets/images/lapis.png' title='Editar personagem'></a></td>";
+                            echo "</tr>";
+                        }  
+            
+                        echo "</table>";
+                        ?>
                     </div>
                 </div>
             </div>
