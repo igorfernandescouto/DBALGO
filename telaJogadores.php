@@ -41,6 +41,17 @@
         $player3 = "noplayer";
     }
 
+    $select = $con->prepare("SELECT p.classe FROM persona p INNER JOIN jogo j WHERE j.oponente = p.codPersona AND j.codJogo = $codJogo");
+    $select->execute();
+
+    while ($result = $select->fetch()) {
+        $oponente=$result['classe'];
+    }
+
+    if (empty($oponente)) {
+        $oponente = "noplayer";
+    }
+
     $select = $con->prepare("SELECT cenario FROM jogo j WHERE $codJogo = j.codJogo");
     $select->execute();
 
@@ -88,6 +99,7 @@
                     <?php echo '<img src="assets/images/'.$player1.'.png" alt="'.$player1.'" width="200px">'?>
                     <?php echo '<img src="assets/images/'.$player2.'.png" alt="'.$player2.'" width="200px">'?>
                     <?php echo '<img src="assets/images/'.$player3.'.png" alt="'.$player3.'" width="200px">'?>
+                    <?php echo '<img src="assets/images/'.$oponente.'.png" alt="'.$oponente.'" width="200px">'?>
                 </div>
             </div>
             <div class="col" id="borda">
