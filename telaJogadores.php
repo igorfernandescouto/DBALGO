@@ -8,7 +8,7 @@
     $codigo = $_SESSION['codUsuario'];
     $codJogo = $_GET['codJogo'];
 
-    $select = $con->prepare("SELECT p.classe FROM persona p INNER JOIN jogo j, usuario u WHERE j.player1 = u.codUsuario AND p.codPersona = u.personagem");
+    $select = $con->prepare("SELECT p.classe FROM persona p INNER JOIN jogo j, usuario u WHERE j.codJogo = $codJogo AND j.player1 = u.codUsuario AND p.codPersona = u.personagem");
     $select->execute();
 
     while ($result = $select->fetch()) {
@@ -19,7 +19,7 @@
         $player1 = "noplayer";
     }
 
-    $select = $con->prepare("SELECT p.classe FROM persona p INNER JOIN jogo j, usuario u WHERE j.player2 = u.codUsuario AND p.codPersona = u.personagem");
+    $select = $con->prepare("SELECT p.classe FROM persona p INNER JOIN jogo j, usuario u WHERE j.codJogo = $codJogo AND j.player2 = u.codUsuario AND p.codPersona = u.personagem");
     $select->execute();
 
     while ($result = $select->fetch()) {
@@ -30,7 +30,7 @@
         $player2 = "noplayer";
     }
 
-    $select = $con->prepare("SELECT p.classe FROM persona p INNER JOIN jogo j, usuario u WHERE j.player3 = u.codUsuario AND p.codPersona = u.personagem");
+    $select = $con->prepare("SELECT p.classe FROM persona p INNER JOIN jogo j, usuario u WHERE j.codJogo = $codJogo AND j.player3 = u.codUsuario AND p.codPersona = u.personagem");
     $select->execute();
 
     while ($result = $select->fetch()) {
@@ -41,7 +41,7 @@
         $player3 = "noplayer";
     }
 
-    $select = $con->prepare("SELECT p.classe FROM persona p INNER JOIN jogo j WHERE j.oponente = p.codPersona AND j.codJogo = $codJogo");
+    $select = $con->prepare("SELECT p.classe FROM persona p INNER JOIN jogo j WHERE j.codJogo = $codJogo AND j.oponente = p.codPersona");
     $select->execute();
 
     while ($result = $select->fetch()) {
