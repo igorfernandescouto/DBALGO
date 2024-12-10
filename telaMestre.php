@@ -50,14 +50,16 @@
                 
             </div>
             <div class="col">
-                <form action="#" method="post">
-                    <label for="insert">Inserir</label>
-                        <select class="form-control" id="insert" required>
+                <form action="inserirOponente.php" method="post">
+                    <input type="hidden" name="codJogo" value="<?php echo $codJogo; ?>">
+                    <label for="oponente">Inserir</label>
+                        <select class="form-control" id="oponente" name="oponente" required>
                             <option value="">Selecione</option>
                             <option value="goblin">Goblin</option>
                             <option value="golen">Golen</option>
                             <option value="dragon">Dragão</option>
                         </select>
+                        <input type="submit" value="Enviar">
                 </form>
                 <div class="dropdown">
                     <button onclick="myFunction()" class="dropbtn">Atributos</button>
@@ -102,18 +104,18 @@
             const dice   = document.querySelector('.dice-result');
             const result = Math.floor(Math.random() * diceSidesArray[diceArrayIndex]) + 1;
             fetch('updateDado.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ladosDado: diceSidesArray[diceArrayIndex], numDado: result })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            document.querySelector('.dice-result').textContent = data.numDado;
-        } else {
-            alert(data.error || 'Dado quebrou!');
-        }
-    });
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ ladosDado: diceSidesArray[diceArrayIndex], numDado: result })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.querySelector('.dice-result').textContent = data.numDado;
+                } else {
+                    alert(data.error || 'Dado quebrou!');
+                }
+            });
 
             dice.textContent = result; // O Número result aparece no centro do dado
             localStorage.setItem('diceResult', result); // Salva o result para ser usado em outras páginas
